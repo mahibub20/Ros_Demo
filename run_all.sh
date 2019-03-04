@@ -1,14 +1,14 @@
 #!/bin/sh
-#. /opt/ros/kinetic/setup.sh
+. /opt/ros/melodic/setup.sh
 mkdir test_results
 mkdir test_results/coverage
 mkdir test_results/gtest
 mkdir test_results/cppcheck
 mkdir test_results/cpplint
 echo 'Building Application'
-#catkin_make install
+catkin_make install
 echo 'Executing UTs'
-#catkin_make run_tests >> test_results/gtest/Unit_testResult.txt
+catkin_make run_tests >> test_results/gtest/Unit_testResult.txt
 echo 'Code Coverage'
 gcovr -r . -e ".*\.h" --exclude=".*test.cc" --exclude=".*_node.cc" --html -o test_results/coverage/coverage.html --html-details
 gcovr -r . --exclude=".*test.cc" --exclude=".*_node.cc" --xml-pretty > test_results/coverage/cov.xml
