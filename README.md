@@ -1,1 +1,1 @@
-# Ros_Demo
+Implementation of a ROS Multiplicator 
